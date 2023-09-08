@@ -1,0 +1,104 @@
+/*--photo slider--*/
+.slide-container{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin-bottom: 10vh;
+  }
+  .slide-container i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .slide-container i:active{
+    transform: translateY(-50%) scale(0.9);
+  }
+  .slide-container i:hover{
+    background: #f2f2f2;
+  }
+  .slide-container i:first-child{
+    left: -22px;
+    display: none;
+  }
+  .slide-container i:last-child{
+    right: -22px;
+  }
+  .slide-container .carousel{
+    display: flex;
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+  .carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging img{
+    pointer-events: none;
+  }
+  .slide img {
+    width: 350px;
+    height: 100%;
+    object-fit: cover;
+
+}   
+  .carousel .slide{
+    
+    height: 340px;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+    position: relative; /* 添加这行 */
+  }
+  .carousel .slide:first-child{
+    margin-left: 0px;
+  }
+
+  
+
+  /* 添加以下样式规则来控制<p>元素 */
+.overlay-content {
+    margin: 0; 
+    padding: 10px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    text-align: center; 
+    font-size: 1rem; 
+    color: #333; 
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    width: 100%;
+    height: 100%;
+    opacity: 1; 
+}
+
+/* 鼠标悬停时显示<p>元素 */
+
+  
+  @media screen and (max-width: 900px) {
+    .carousel .slide{
+      width: calc(100% / 2);
+    }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .carousel .slide{
+      width: 100%;
+    }
+  }
